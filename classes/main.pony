@@ -1,8 +1,6 @@
 actor Main
   new create(env: Env) =>
-    let w = Wombat("foo")
-    w.set_hunger(3)
-    env.out.print(w.describe())
+    env.out.print(Wombat("foo").>set_hunger(3).describe())
 
 class Wombat
   let name: String
@@ -17,4 +15,3 @@ class Wombat
 
   fun describe(): String =>
     "Wombat \"" + name + "\" is hungry (" + _hunger_level.string() + ")"
-
